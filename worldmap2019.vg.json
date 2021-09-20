@@ -12,8 +12,11 @@
           "mark": {"type":"geoshape", "fill": "lightgrey", "stroke": "white"}
         },
         {
-          "data": {"url": "https://raw.githubusercontent.com/jdan0003/lab19/main/The%20Worlds%2050%20Best%20Restaurants%202018.csv"},
-          "mark": {"type": "circle", "tooltip": {"content": "data"}},
+          "data": {"url": "https://raw.githubusercontent.com/jdan0003/lab19/dd22e27311bb2d2b9b021818b4c710b121be5645/50%20best%20restaurants%20database.csv"},
+          "mark": {
+            "type": "circle",
+            "stroke": "black",
+            "tooltip": {"content": "data"}},
           "encoding": {
               "longitude": {"field":"Longitude", "type": "quantitative"},
               "latitude": {"field": "Latitude", "type": "quantitative"},
@@ -24,7 +27,7 @@
               "color": {
                 "field":"Points",
                 "type":"quantitative",
-                "scale": {"scheme":"tealblues"}
+                "scale": {"scheme":"yellowgreenblue"}
               }
           }
         }

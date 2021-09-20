@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1500,
+    "height": 600,
+    "projection": {"type": "equalEarth"},
+    "layer": [
+        {
+          "data":{
+            "url":"https://raw.githubusercontent.com/jdan0003/lab19/main/custom.geo.topo.json",
+            "format": {"type":"topojson", "feature": "custom.geo"}
+            },
+          "mark": {"type":"geoshape", "fill": "lightgrey", "stroke": "white"}
+        },
+        {
+          "data": {"url": "https://raw.githubusercontent.com/jdan0003/lab19/main/one-star-michelin-restaurants.csv"},
+          "mark": {"type": "circle", "fillOpacity": 0, "stroke":"blue", "tooltip": {"content":"data"}},
+          "encoding": {
+            "longitude": {"field":"longitude", "type":"quantitative"},
+            "latitude": {"field":"latitude","type":"quantitative"},
+            "size": {"value":100}
+          }
+        },
+        {
+          "data": {"url": "https://raw.githubusercontent.com/jdan0003/lab19/main/two-stars-michelin-restaurants.csv"},
+          "mark": {"type": "circle", "fillOpacity": 0, "stroke":"purple", "tooltip": {"content":"data"}},
+          "encoding": {
+            "longitude": {"field":"longitude", "type":"quantitative"},
+            "latitude": {"field":"latitude","type":"quantitative"},
+            "size": {"value":300}
+          }
+        },
+        {
+          "data": {"url": "https://raw.githubusercontent.com/jdan0003/lab19/main/three-stars-michelin-restaurants.csv"},
+          "mark": {"type": "circle","fillOpacity": 0, "stroke":"red",  "tooltip": {"content":"data"}},
+          "encoding": {
+            "longitude": {"field":"longitude", "type":"quantitative"},
+            "latitude": {"field":"latitude","type":"quantitative"},
+            "size": {"value":600}
+          }
+        }
+    ]
+  }
