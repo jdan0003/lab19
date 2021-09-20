@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1600,
+    "height": 1000,
+    "title": "Top Restaurants in the World 2018",
+    "projection": {"type": "equalEarth"},
+    "layer": [
+        {
+          "data":{
+            "url":"https://raw.githubusercontent.com/jdan0003/lab19/main/custom.geo.topo.json",
+            "format": {"type":"topojson", "feature": "custom.geo"}
+            },
+          "mark": {"type":"geoshape", "fill": "lightgrey", "stroke": "white"}
+        },
+        {
+          "data": {"url": "https://raw.githubusercontent.com/jdan0003/lab19/main/The%20Worlds%2050%20Best%20Restaurants%202018.csv"},
+          "mark": {"type": "circle", "tooltip": {"content": "data"}},
+          "encoding": {
+              "longitude": {"field":"Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "size": {
+                "field":"Points",
+                "type":"quantitative"
+              },
+              "color": {
+                "field":"Points",
+                "type":"quantitative",
+                "scale": {"scheme":"tealblues"}
+              }
+          }
+        }
+    ]
+  }
